@@ -1,0 +1,183 @@
+{% load static tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+			rel="stylesheet"
+		/>
+        <script src="https://kit.fontawesome.com/682b28ed24.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
+        {% tailwind_css %}
+		{% comment %} <link rel="stylesheet" href="{% static "css/tailwind.css" %}" /> {% endcomment %}
+		<title>jotinha.me</title>
+	</head>
+	<body>
+		<div class="h-[50vh] lg:h-screen bg-gradient-to-t from-indigo-200 relative overflow-hidden">
+			<nav class="w-full fixed top-0 bg-white z-10">
+                <div class="container mx-auto py-5 px-3 flex justify-between">
+                    <div class="flex items-center gap-1">
+                        <img src="{% static "img/arroba.png" %}" class="w-6">
+                        <span id="logo" class="text-lg font-bold text-blue-950 z-20">jotinha.me</span>
+                    </div>
+                    <ul class="hidden md:flex space-x-10 text-gray-700 font-bold text-sm items-center">
+                        <li class="hover:text-indigo-800">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="hover:text-indigo-800">
+                            <a href="#sobre">Sobre mim</a>
+                        </li>
+                        <li class="hover:text-indigo-800">
+                            <a href="#tecnologias">Tecnologias</a>
+                        </li>
+                        <li class="hover:text-indigo-800">
+                            <a href="#portifolio">Portifólio</a>
+                        </li>
+                        <li class="hover:text-indigo-800">
+                            <a href="#contato">Contato</a>
+                        </li>
+                    </ul>
+                    <div id="hamburger" class="space-y-1 md:hidden cursor-pointer z-20 p-1">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <ul id="menu" class="hidden bg-indigo-800 absolute left-0 top-0 w-full p-10 rounded-b-lg space-y-6 text-white">
+                        <li class="mt-7">
+                            <a id="menu-link" href="#">Home</a>
+                        </li>
+                        <li>
+                            <a id="menu-link" href="#sobre">Sobre mim</a>
+                        </li>
+                        <li>
+                            <a id="menu-link" href="#tecnologias">Tecnologias</a>
+                        </li>
+                        <li>
+                            <a id="menu-link" href="#portifolio">Portifólio</a>
+                        </li>
+                        <li>
+                            <a id="menu-link" href="#contato">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Introdução -->                
+            <img src="{% static "img/jotave.png" %}" class="absolute bottom-0 right-0 lg:left-0 h-3/4 -mr-10 sm:mx-auto lg:h-[83%] lg:pl-52 object-cover">
+
+            <!-- Círculo atrás -->
+            <div class="hidden lg:block absolute -bottom-1/4 right-0 left-0 mx-auto w-[45rem] h-[45rem] bg-indigo-300 rounded-full -z-10"></div>
+
+            <!-- Texto animado -->
+			<div class="absolute top-1/2 left-5 text-3xl sm:left-10 sm:text-4xl md:left-[15%] md:text-5xl lg:left-5 lg:top-1/3 xl:left-32 xl:text-7xl font-bold">
+                <p id="funcao">Dev.</p>
+                <div class="text-indigo-600">
+                    <span id="tipo-funcao"></span><span class="font-light" id="typingEffect"></span>
+                </div>
+            </div>
+
+            <!-- Texto pop-up -->
+            <div class="hidden lg:flex flex-col gap-5 rounded-md shadow-lg absolute top-0 bottom-0 m-auto right-10 bg-white p-6 font-semibold h-fit w-1/3">
+                <h1 class="text-4xl font-bold">Opa, sou João Victor</h1>
+                <p class="text-gray-700">Sou conhecido como Jotinha. Sou um entusiasta da programação, com conhecimento na área de desenvolvimento back-end. Atualmente, estou imerso em estudos sobre computação em nuvem e constantemente em busca de aprimorar minhas habilidades e expandir meu conhecimento, especialmente no que diz respeito às últimas tendências. </p>
+                <a href="#" class="bg-indigo-700 text-white text-l px-3 py-2 rounded-md font-semibold hover:bg-indigo-800 hover:text-gray-100 w-fit">Entre em contato!</a>
+            </div>
+		</div>
+
+        <!-- Tecnologias -->
+        <div id="tecnologias" class="py-20">
+            <div class="container mx-auto">
+                <!-- top -->
+                <div class="flex flex-col gap-3 items-center">
+                    <h1 class="text-indigo-700 font-bold">Tecnologias</h1>
+                    <h1 class="text-3xl">O que eu ofereço?</h1>
+                    <p class="w-1/2 text-center text-gray-500">Minha abordagem é centrada na compreensão dos desafios que você enfrenta, para então projetar e desenvolver soluções que não apenas superem suas expectativas mas que tambèm tragam um impacto positivo ao seu negócio.</p>
+                </div>
+                <!-- bottom -->
+                <div class="p-5 sm:p-0 flex flex-wrap justify-center">
+                    <div class="w-full md:w-4/12 shadow-xl rounded p-5 my-3 md:my-7 flex flex-col gap-3">
+                        <img src="{% static "img/django-logo.png" %}" alt="django-logo" class="w-10">
+                        <h1 class="font-medium text-lg">Django</h1>
+                        <p class="text-gray-500">Eu desenvolvo sites utilizando o Django</p>
+                        <a href="#" class="text-indigo-600">Saiba Mais</a>
+                    </div>
+                    <div class="w-full md:w-4/12 shadow-xl rounded p-5 my-3 md:my-7 flex flex-col gap-3">
+                        <img src="{% static "img/docker-logo.png" %}" alt="" class="w-10">
+                        <h1 class="font-medium text-lg">Docker</h1>
+                        <p class="text-gray-500">Com os Containers, o docker se torna uma ferramenta poderosa e versátil que facilita a criação, distribuição e execução de aplicativos em ambientes isolados. </p>
+                        <a href="#" class="text-indigo-600">Saiba Mais</a>
+                    </div>
+                    <div class="w-full md:w-4/12 shadow-xl rounded p-5 my-3 md:my-7 flex flex-col gap-3">
+                        <img src="{% static "img/aws-logo.png" %}" alt="" class="w-10">
+                        <h1 class="font-medium text-lg">AWS</h1>
+                        <p class="text-gray-500">Crio, hospedar e gerencio aplicativos e serviços online de maneira escalável e confiável com o EC2 e o S3</p>
+                        <a href="#" class="text-indigo-600">Saiba Mais</a>
+                    </div>
+                    <div class="w-full md:w-4/12 shadow-xl rounded p-5 my-3 md:my-7 flex flex-col gap-3">
+                        <img src="{% static "img/grafana+prometheus-logo.png" %}" alt="" class="w-16">
+                        <h1 class="font-medium text-lg">Grafana + Prometheus</h1>
+                        <p class="text-gray-500">Crio dashboards de monitoramento em tempo real de sistemas</p>
+                        <a href="#" class="text-indigo-600">Saiba Mais</a>
+                    </div>
+                    <div class="w-full md:w-4/12 shadow-xl rounded p-5 my-3 md:my-7 flex flex-col gap-3">
+                        <img src="{% static "img/mysql-logo.png" %}" alt="" class="w-16">
+                        <h1 class="font-medium text-lg">MySQL</h1>
+                        <p class="text-gray-500">Utilizo o banco de dados MySQL</p>
+                        <a href="#" class="text-indigo-600">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portifólio -->
+        <div id="portifolio" class="py-20">
+            <div class="container mx-auto">
+                <div class="flex flex-col gap-3 items-center">
+                    <h1 class="text-indigo-700 font-bold">Portifólio</h1>
+                    <h1 class="text-5xl font-bold uppercase">Em Breve!</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Contato -->
+        <div id="contato" class="py-20">
+            <div class="containter mx-auto">
+                <!-- top -->
+                <div class="flex flex-col gap-3 items-center">
+                    <h1 class="text-indigo-700 font-bold">Contato</h1>
+                    <h1 class="text-3xl">Perguntas?</h1>
+                    <p class="w-1/2 text-center text-gray-600">Você tem alguma ideia? Manda um email!</p>
+                </div>
+                <!-- bottom -->
+                <form  action="send-email" method="post" class="mt-5 p-8 flex flex-col gap-5 items-center">
+                    {% csrf_token %}
+                    <input class="p-2 w-full md:w-1/2 ring-1 ring-indigo-300 rounded-sm" type="text" placeholder="Nome" name="nome">
+                    <input class="p-2 w-full md:w-1/2 ring-1 ring-indigo-300 rounded-sm" type="text" placeholder="Email" name="email">
+                    <textarea class="p-2 w-full md:w-1/2 ring-1 ring-indigo-300 rounded-sm" name="mensagem" cols="30" rows="10" placeholder="Mensagem..."></textarea>
+                    <button class="w-1/2 bg-indigo-600 text-white font-medium px-3 py-2 rounded-sm" type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="w-full bg-gray-900">
+            <div class="container mx-auto py-5 px-3 flex justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="{% static "img/arroba.png" %}" class="w-6">
+                    <span id="logo" class="text-lg font-medium text-gray-50">jotinha.me</span>
+                </div>
+                <span class="hidden md:block font-medium text-gray-50">2023 © jotave.me</span>                
+                <div class="flex gap-2">
+                    <a target="_blank" href="https://www.linkedin.com/in/jo%C3%A3o-victor-nunes-281809225/"><img class="w-6 cursor-pointer" src="{% static "img/linkedin.png" %}" alt=""></a>
+                    <a target="_blank" href="https://github.com/jotaven"><img class="w-7 cursor-pointer" src="{% static "img/github.png" %}" alt=""></a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="{% static "js/main.js" %}"></script>
+        <script src="{% static "js/autotyping.js" %}"></script>
+	</body>
+</html>
