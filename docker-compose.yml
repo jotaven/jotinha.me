@@ -21,3 +21,18 @@ services:
     # Without tty, no stdin, and tailwind watcher aborts
     # https://github.com/tailwindlabs/tailwindcss/issues/5324
     tty: true
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus:/etc/prometheus/
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
