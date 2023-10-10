@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.views.generic import TemplateView 
-
+from .models import Projects
+from datetime import datetime
 
 
 class Home(TemplateView):
@@ -18,5 +19,12 @@ class Home(TemplateView):
 
         send_mail('Nova mensagem!', corpo_email, 'noreply@jotinha.com', [destinatario])
         return render(request, self.template_name, {'sucesso': True})
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['projects'] = Projects.objects.all()
+        context['year'] = datetime.now().year
+        return context
+
 
         

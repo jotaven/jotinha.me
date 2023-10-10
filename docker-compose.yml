@@ -36,3 +36,10 @@ services:
     volumes:
       - ./grafana:/etc/grafana/provisioning
       - ./grafana/dashboards:/var/lib/grafana/dashboards
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
